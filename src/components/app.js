@@ -2,16 +2,19 @@ const React = require('react')
 const _ = require('lodash')
 
 //components
-const ProductRow = require('./product-row')
-const CartRow = require('./cart-row')
+
 
 module.exports = function App (props) {
   console.log('props', props)
   console.log('state', props.store.getState())
-  
+
   return (
-    <div className="shop">
-      <h1>SHOP</h1>
+  <div>
+    <div className="banner">
+      <h1>gardenApp</h1>
+      <h2>Garden, record, enjoy.</h2>
+    </div>
+    <div>
         <table>
           <thead>
             <tr>
@@ -41,5 +44,6 @@ module.exports = function App (props) {
         <p>Total : $ {0}</p>
         <button type="button" name="checkout" id="checkout">checkout</button>
     </div>
+  </div>  
   )
 }
