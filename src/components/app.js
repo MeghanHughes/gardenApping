@@ -18,9 +18,7 @@ module.exports = function App (props) {
         <table>
           <thead>
             <tr>
-              <th>ITEMS</th>
-              <th>PRICE</th>
-              <th>stock</th>
+              <th>Current zones</th>
               <th></th>
             </tr>
           </thead>
@@ -44,6 +42,6 @@ module.exports = function App (props) {
         <p>Total : $ {0}</p>
         <button type="button" name="checkout" id="checkout">checkout</button>
     </div>
-  </div>  
+  </div>
   )
 }
