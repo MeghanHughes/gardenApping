@@ -4,21 +4,28 @@ const ReactDOM = require('react-dom')
 const { Provider } = require('react-redux')
 const { createStore } = require('redux')
 const createHistory = require('history').createHashHistory
-const { MuiThemeProvider } = require('material-ui/styles')
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const reducer = require('./reducer')
-const initialState = require(../state)
 const request = require('superagent')
 
 // components
 const App = require('./components/app')
 const Zones = require('./components/zones')
 
+const initialState = {
+	zones: {
+    1: {id: 1, name: 'Patio'},
+    2: {id: 2, name: 'Back of house (kitchen)'},
+    3: {id: 3, name: 'Side of house (bathroom)'}
+  },
+}
+
+const store = createStore(reducer, initialState)
 store.subscribe(()=> {
 })
+
 const Root = ({store}) => {
 	return (
-		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
@@ -26,7 +33,6 @@ const Root = ({store}) => {
 					</Route>
 				</Router>
 			</Provider>
-		</MuiThemeProvider>
 	)
 }
 
@@ -38,6 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
 		root
 	)
 })
-
-// <Route path = 'new-user' component={NewUser} />
-// <NewUser/>
