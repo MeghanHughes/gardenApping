@@ -15,5 +15,15 @@ h2 {
   font-family: 'Pacifico', cursive;
   text-align: center;
   background-color: #ebdada;
-  padding: 5px;
+  padding: 5px 5px 5px 10px;
+}
+
+.zoneTable {
+  border-width: 5px;
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); border-width: 5px;
+  width: 100%;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background-color: #ebdada;
+  padding: 5px 5px 5px 10px;
 }

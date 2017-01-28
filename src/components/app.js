@@ -13,10 +13,9 @@ const App = (props) => {
     <div className="banner">
       <h1>gardenApp</h1>
       <h2>Garden, record, enjoy.</h2>
-      <div>
-        <Zones />
-      </div>
-      {/* I want to have the Zone component show up in here. Have tried <Zone /> and other stuff I can't remember but nothing... */}
+    </div>
+    <div className="zoneTable">
+      <Zones />
     </div>
   </div>
   )

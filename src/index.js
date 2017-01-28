@@ -5,6 +5,7 @@ const { Provider } = require('react-redux')
 const { createStore } = require('redux')
 const createHistory = require('history').createHashHistory
 const { Router, Route, IndexRoute, hashHistory } = require('react-router')
+const { MuiThemeProvider } = require('material-ui/styles')
 const reducer = require('./reducer')
 const request = require('superagent')
 
@@ -27,6 +28,7 @@ store.subscribe(()=> {
 
 const Root = ({store}) => {
 	return (
+		<MuiThemeProvider>
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
@@ -34,6 +36,7 @@ const Root = ({store}) => {
 					</Route>
 				</Router>
 			</Provider>
+		</MuiThemeProvider>	
 	)
 }
 
