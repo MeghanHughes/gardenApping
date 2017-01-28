@@ -6,27 +6,19 @@ const reducer = require('./reducer')
 
 // components
 const App = require('./components/app')
-const CounterApp = require('./components/counter-app')
-
-
-
 // actions
 // plain object {type: string, payload: Object | string | number}
 
 // model -> state
 
-// reducer (state, action) :: -> state  
+// reducer (state, action) :: -> state
 //const initialState = 0
 const initialState = {
-  products: {
-    1: {id: 1, name: 'banana', stock: 2, price:2} 
+  zones: {
+    1: {id: 1, name: 'Patio'},
+    2: {id: 2, name: 'Back of house (kitchen)'},
+    3: {id: 3, name: 'Side of house (bathroom)'}
   },
-
-  cart:  {
-
-  },
-
-  total: 0
 }
 
 
@@ -58,27 +50,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
   render(store.getState())
 
-
-
-
-
-  //store.fetchCats()
-
-
 })
-
-
-
-
-
-function counterReducer (state, action) {
-  console.log('reducer', state, action)
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default: // must have default
-      return state
-  }
-}
