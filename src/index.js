@@ -21,6 +21,7 @@ const initialState = {
   },
 }
 
+
 const store = createStore(reducer, initialState)
 console.log('this is store', store);
 store.subscribe(()=> {
@@ -36,7 +37,7 @@ const Root = ({store}) => {
 					</Route>
 				</Router>
 			</Provider>
-		</MuiThemeProvider>	
+		</MuiThemeProvider>
 	)
 }
 

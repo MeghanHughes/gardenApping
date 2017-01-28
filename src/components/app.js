@@ -5,6 +5,7 @@ const { Link } = require('react-router')
 
 //components
 const Zones = require('./zones')
+const Images = require('./images')
 
 const App = (props) => {
   console.log('this is props from initialState', props);
@@ -14,7 +15,8 @@ const App = (props) => {
       <h1>gardenApp</h1>
       <h2>Garden, record, enjoy.</h2>
     </div>
-    <div className="zoneTable">
+    <div>
+      <Images />
       <Zones />
     </div>
   </div>
