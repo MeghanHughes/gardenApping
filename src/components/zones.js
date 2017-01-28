@@ -1,12 +1,16 @@
 const React = require('react')
+const { connect } = require('react-redux')
+const { Link } = require('react-router')
+const _ = require('lodash')
 
 
-class zones extends React.Component {
+class Zones extends React.Component {
   render() {
     return(
-      <p>This is the zone component</p>
+      <div>
+        <p>This is the zone component</p>
+      </div>
     )
   }
 }
-
-export default zones
+module.exports =  connect((state) => state)(Zones)

@@ -4,7 +4,7 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 30px;
   color: #a2798f;
 }
 
@@ -15,5 +15,5 @@ h2 {
   font-family: 'Pacifico', cursive;
   text-align: center;
   background-color: #ebdada;
-  padding: 15px;
+  padding: 5px;
 }
