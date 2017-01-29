@@ -1,22 +1,25 @@
 import React from 'react';
 const { connect } = require('react-redux')
 
-let urls = [
+const urls = [
 	'https://photos.google.com/photo/AF1QipN608c40KfkYtol930_CyKhMyFB90d6atO1uF8y',
 	'https://photos.google.com/photo/AF1QipMPjqRX--jKqBrBqi2SeuRDldCOJrUViRXqAVfz',
 	'https://photos.google.com/photo/AF1QipPAtKc27LDwv6cJYoJo1qJBn2492y0SupGFaroj'
 ]
 
 const imageUrls = {urls}
-
 class Images extends React.Component {
-  renderImage(imageUrl) {
+
+function renderImage(imageUrl) {
+	console.log('imageUrls',imageUrls);
+
     return (
       <div>
         <img src={imageUrl} />
       </div>
     );
   }
+	
   render(){
     return (
       <div className="gallery">
