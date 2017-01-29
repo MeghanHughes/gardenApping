@@ -16,11 +16,13 @@ const App = (props) => {
       <h2>Garden, record, enjoy.</h2>
     </div>
     <div>
-      <Images />
       <Zones />
+      <Images />
     </div>
   </div>
   )
 }
 
 module.exports = connect((state) => state)(App)
+// <Images />
+// {props.children}
