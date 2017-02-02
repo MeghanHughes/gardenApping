@@ -3,9 +3,11 @@ const _ = require('lodash')
 const { connect } = require('react-redux')
 const { Link } = require('react-router')
 
+const Login = require('./login')
+// console.log('login', login);
 //components
-const Zones = require('./zones')
-const Images = require('./images')
+// const Zones = require('./zones')
+// const Images = require('./images')
 
 const App = (props) => {
   console.log('this is props from initialState', props);
@@ -15,14 +17,15 @@ const App = (props) => {
       <h1>gardenApp</h1>
       <h2>Garden, record, enjoy.</h2>
     </div>
+      <Login />
     <div>
-      <Zones />
-      <Images />
     </div>
   </div>
   )
 }
 
 module.exports = connect((state) => state)(App)
+// <Zones />
+// <Images />
 // <Images />
 // {props.children}

@@ -5,4 +5,4 @@ module.exports = {
     3: {id: 3, name: 'Side of house (bathroom)'}
   },
 }
-// This doesn't work - initialState is defined in index.js
+// this isn't working - initialState defined in index.js

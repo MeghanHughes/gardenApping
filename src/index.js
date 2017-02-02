@@ -8,13 +8,12 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const { MuiThemeProvider } = require('material-ui/styles')
 const reducer = require('./reducer')
 const request = require('superagent')
-
+// const initialState = require('../state')
 // components
 const App = require('./components/app')
-const Zones = require('./components/zones')
 
 const initialState = {
-	zones: {
+  zones: {
     1: {id: 1, name: 'Patio'},
     2: {id: 2, name: 'Back of house (kitchen)'},
     3: {id: 3, name: 'Side of house (bathroom)'}
@@ -22,9 +21,12 @@ const initialState = {
 }
 
 
+
 const store = createStore(reducer, initialState)
 console.log('this is store', store);
+
 store.subscribe(()=> {
+	console.log('loggin state', store.getState());
 })
 
 const Root = ({store}) => {
@@ -33,9 +35,8 @@ const Root = ({store}) => {
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
-						<Route path = '/zones' component={Zones} />
-					</Route>
-				</Router>
+						</Route>
+					</Router>
 			</Provider>
 		</MuiThemeProvider>
 	)
@@ -49,3 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		root
 	)
 })
+
+// const Home = require('./components/home')
+// const Profile = require('./components/profile')
+
+
+// <IndexRoute component={Home} />
+// 	<Route path = '/profile' component={Profile} />
