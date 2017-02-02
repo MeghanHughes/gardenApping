@@ -2,7 +2,7 @@ const React = require('react')
 const { connect } = require('react-redux')
 
 
-function Home() {
+const Home = (props) => {
   return (
     <div>
       <h1>HOME</h1>

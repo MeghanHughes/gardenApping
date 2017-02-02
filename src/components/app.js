@@ -18,6 +18,7 @@ const App = (props) => {
       <h2>Garden, record, enjoy.</h2>
     </div>
       <Login />
+      {props.children}
     <div>
     </div>
   </div>
@@ -25,7 +26,5 @@ const App = (props) => {
 }
 
 module.exports = connect((state) => state)(App)
+
 // <Zones />
-// <Images />
-// <Images />
-// {props.children}

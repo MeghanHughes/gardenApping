@@ -1,8 +1,9 @@
 module.exports = {
-  zones: {
-    1: {id: 1, name: 'Patio'},
-    2: {id: 2, name: 'Back of house (kitchen)'},
-    3: {id: 3, name: 'Side of house (bathroom)'}
+  users: {
+    1: {id: 1, name: 'Meghan', password: 'Starbuck'},
+    2: {id: 2, name: 'Gareth', password: 'Churchill'},
+    3: {id: 3, name: 'Arlo', password: 'Eragon'},
+    4: {id: 4, name: 'Zoe', password: 'Pippi'}
   },
 }
 // this isn't working - initialState defined in index.js

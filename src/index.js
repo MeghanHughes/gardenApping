@@ -8,17 +8,12 @@ const { Router, Route, IndexRoute, hashHistory } = require('react-router')
 const { MuiThemeProvider } = require('material-ui/styles')
 const reducer = require('./reducer')
 const request = require('superagent')
-// const initialState = require('../state')
+const initialState = require('../state')
 // components
 const App = require('./components/app')
+const Home = require('./components/home')
+const Profile = require('./components/profile')
 
-const initialState = {
-  zones: {
-    1: {id: 1, name: 'Patio'},
-    2: {id: 2, name: 'Back of house (kitchen)'},
-    3: {id: 3, name: 'Side of house (bathroom)'}
-  },
-}
 
 
 
@@ -35,8 +30,10 @@ const Root = ({store}) => {
 			<Provider store = {store}>
 				<Router history = {hashHistory}>
 					<Route path = '/' component={App}>
-						</Route>
-					</Router>
+						<IndexRoute component={Home} />
+						<Route path = 'profile' component={Profile} />
+					</Route>
+				</Router>
 			</Provider>
 		</MuiThemeProvider>
 	)
@@ -51,9 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	)
 })
 
-// const Home = require('./components/home')
-// const Profile = require('./components/profile')
 
 
-// <IndexRoute component={Home} />
-// 	<Route path = '/profile' component={Profile} />
+
+
+// const initialState = {
+// 	zones: {
+// 		1: {id: 1, name: 'Patio'},
+// 		2: {id: 2, name: 'Back of house (kitchen)'},
+// 		3: {id: 3, name: 'Side of house (bathroom)'}
+// 	},
+// }

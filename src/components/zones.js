@@ -7,14 +7,12 @@ from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import Toggle from 'material-ui/Toggle';
 
-class Zones extends React.Component {
-  render() {
+const Zones = (props) => {
     return(
       <div>
       <p>This is the zone component</p>
       </div>
     )
-  }
 }
 
 module.exports = connect((state) => state)(Zones)

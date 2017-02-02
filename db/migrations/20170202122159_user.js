@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     t.increments('id');
     t.string('name');
     t.string('password');
+    t.boolean('isAdmin').defaultTo(false).notNullable();
   })
 };
 
