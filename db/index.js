@@ -6,10 +6,14 @@ module.exports = function (knex) {
       .select()
     },
 
+    findUsers: function () {
+      return knex('user')
+      .select('*')
+    },
 
-  findUsers: function () {
-    return knex('user')
-    .select('*')
-  },
+    listZoneData: function() {
+      return knex('zone')
+      .select('*')
+    },
   }
 }
