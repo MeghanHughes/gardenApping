@@ -2,9 +2,10 @@ const express = require("express");
 const route = express.Router();
 
 module.exports = function(db) {
-  route.get('/', dummyData)
-  route.get('/users', getUsers)
-  route.get('/zones', getZoneData)
+  route.get('/', dummyData);
+  route.get('/users', getUsers);
+  route.get('/zones', getZoneData);
+  route.post('/login', loginData);
 
   function dummyData(req, res, next) {
       res.json({"data": "data"});
@@ -24,6 +25,10 @@ module.exports = function(db) {
       console.log('zoneAPI', dataInfo);
       res.json(dataInfo)
     })
+  }
+  
+  function loginData(req, res, next) {
+    console.log('here is the login data', req.body);
   }
 
   return route;

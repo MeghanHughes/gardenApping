@@ -2,6 +2,7 @@ const { connect } = require('react-redux')
 const { Link } = require('react-router')
 const React = require('react')
 import RaisedButton from 'material-ui/RaisedButton';
+const superagent = require('superagent')
 
 
 const style = {
@@ -9,23 +10,43 @@ const style = {
 };
 
 // class component (is an object) includes render() use this.props => define new handleClick => needs refs
-const Login = (props) => {
-    return(
+class Login extends React.Component {
+  render(){
+  const { dispatch } = this.props
+
+      return (
       <div className='login'>
         <form id="login" action="/profile" method="POST">
             <div>
-                Email:
-                <input className='homePageButton' type='text' ref='email' placeholder='Email' />
+                Name:
+                <input type='text' ref='name' placeholder='name' />
                 Password:
-                <input className='homePageButton' type='password' ref='passwordEntry' placeholder='Password' />
-                  <RaisedButton type="submit" id="login-submit" data-submit="...Sending" label="LOGIN" style={style} />
+                <input type='text' ref='password' placeholder='Password' />
+
+                  <RaisedButton onClick={this.handleClick.bind(this)} label="LOGIN" style={style} />
             </div>
         </form>
       </div>
     )
+  }
+
+  handleClick(e) {
+    e.preventDefault()
+    console.log('refs', this.refs.name.value);
+    const name = this.refs.name.value
+    const password = this.refs.password.value
+
+    request.post('api/v1/login')
+    .send({email, password})
+    .end((err, response)=>{
+      if(err){
+        console.log('well that did not work properly', err);
+      }else{
+        console.log('response.body', response.body);
+        this.props.router.push('/profile')
+      }
+    })
+  }
 }
 
 module.exports = connect((state) => state)(Login)
-
-// <RaisedButton onClick={this.handleClick.bind(this)} >Login </RaisedButton>
-// <AuthErr  {...this.props} />
