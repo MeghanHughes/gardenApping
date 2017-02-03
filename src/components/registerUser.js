@@ -10,7 +10,7 @@ const style = {
 };
 
 // class component (is an object) includes render() use this.props => define new handleClick => needs refs
-class Login extends React.Component {
+class RegisterUser extends React.Component {
   render(){
 
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
                 Password:
                 <input type='text' ref='password' placeholder='Password' />
 
-                  <RaisedButton onClick={this.handleClick.bind(this)} label="LOGIN" style={style} />
+                  <RaisedButton onClick={this.handleClick.bind(this)} label="RESIGTER" style={style} />
             </div>
         </form>
       </div>
@@ -37,7 +37,7 @@ class Login extends React.Component {
     const name = this.refs.name.value
     const password = this.refs.password.value
 
-    request.post('api/v1/login')
+    request.post('api/v1/register')
     .send({name, password})
     .end((err, response)=>{
       if(err){
@@ -50,4 +50,4 @@ class Login extends React.Component {
   }
 }
 
-module.exports = connect((state) => state)(Login)
+module.exports = connect((state) => state)(RegisterUser)

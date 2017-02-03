@@ -71,6 +71,33 @@ module.exports = function (db) {
     })
   }
 
+  app.get('/', function (req, res, next) {
+    var sess = req.session
+
+    res.send(req.session.name)
+  })
+
+  app.get('/login', function (req, res, next) {
+    var sess = req.session
+    if (sess.views) {
+      sess.views++
+      res.setHeader('Content-Type', 'text/html')
+      res.write('<p>views: ' + sess.views + '</p>')
+      res.write('<p>expires in: ' + (sess.cookie.maxAge / 1000) + 's</p>')
+      res.end()
+    } else {
+      sess.views = 1
+      res.end('welcome to the session demo. refresh!')
+    }
+  })
+  // 
+  // app.get('/logout', function(req, res, next){
+  //   req.session.destroy(function(err) {
+  //     console.log('error');
+  //   })
+  //   res.send('logging out no more cookies')
+  // })
+
   // production error handler
   // no stacktraces leaked to user
   app.use(function(err, req, res, next) {
